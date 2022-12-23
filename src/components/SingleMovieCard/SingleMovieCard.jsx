@@ -1,5 +1,6 @@
 import { Container } from 'components/Container/Container.styled';
 import LolPicture from '../../data/images/lol.png';
+import ReturnButton from 'components/ReturnButton/ReturnButton';
 import {
   MovieCardWrapper,
   MovieCardPoster,
@@ -13,12 +14,17 @@ import {
   MovieLink,
   MovieLinksText,
 } from './SingleMovieCard.styled';
+import { useLocation } from 'react-router-dom';
 
 export default function SingleMovieCard({ movieInfo }) {
+  const location = useLocation();
   const { title, genres, budget, homepage, poster, description, rating } =
     movieInfo;
+  const backLinkHref = location.state?.from ?? '/';
+
   return (
     <Container>
+      <ReturnButton linkBack={backLinkHref} />
       <MovieCardWrapper>
         <MovieCardPoster
           src={
@@ -45,8 +51,12 @@ export default function SingleMovieCard({ movieInfo }) {
           <p>{description}</p>
           <MovieLinksBlock>
             <MovieLinksText>Additional Information</MovieLinksText>
-            <MovieLink to="cast">Cast</MovieLink>
-            <MovieLink to="reviews">Reviews</MovieLink>
+            <MovieLink to="cast" state={{ from: backLinkHref }}>
+              Cast
+            </MovieLink>
+            <MovieLink to="reviews" state={{ from: backLinkHref }}>
+              Reviews
+            </MovieLink>
           </MovieLinksBlock>
         </MovieCardInfo>
       </MovieCardWrapper>

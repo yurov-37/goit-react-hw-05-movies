@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyles from './GlobalStyles';
 import { MovieApp } from './App.styled';
 import Header from './Header/Header';
@@ -24,6 +26,7 @@ export default function App() {
         <Route path="*" element={<Home />} />
       </Routes>
       <GlobalStyles />
+      <ToastContainer autoClose={2000} />
     </MovieApp>
   );
 }

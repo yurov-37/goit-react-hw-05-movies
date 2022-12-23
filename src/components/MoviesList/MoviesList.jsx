@@ -1,7 +1,7 @@
 import MovieCard from 'components/MovieCard/MovieCard';
-import { MovieList } from './PopularMoviesList.styled';
+import { MovieList } from './MoviesList.styled';
 
-export default function PopularMoviesList({ movies }) {
+export default function MoviesList({ movies, state }) {
   return (
     <MovieList>
       {movies.map(({ id, title, poster, voteAverage, name }) => (
@@ -12,6 +12,7 @@ export default function PopularMoviesList({ movies }) {
           title={title}
           poster={poster}
           voteAverage={voteAverage}
+          state={state}
         />
       ))}
     </MovieList>

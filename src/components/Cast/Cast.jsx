@@ -7,7 +7,7 @@ import CastList from 'components/CastList/CastList';
 
 export default function Cast() {
   const { movieId } = useParams();
-  const [cast, setCast] = useState(null);
+  const [cast, setCast] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +35,11 @@ export default function Cast() {
     <Container>
       {isLoading && <ThreeDots color="#3f51b5" />}
       {error && <h2>Data processing error. Try reloading the page.</h2>}
-      {cast && <CastList arrayOfCast={cast} />}
+      {cast.length > 0 ? (
+        <CastList arrayOfCast={cast} />
+      ) : (
+        <p>There is no cast information for this movie</p>
+      )}
     </Container>
   );
 }

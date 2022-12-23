@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'api/getTrendingMovies';
-import PopularMoviesList from 'components/PopularMoviesList/PopularMoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
 import { ThreeDots } from 'react-loader-spinner';
 import { Container } from 'components/Container/Container.styled';
 
@@ -42,7 +42,7 @@ export default function Home() {
     <Container>
       {isLoading && <ThreeDots color="#3f51b5" />}
       {error && <h2>Data processing error. Try reloading the page.</h2>}
-      {movies && <PopularMoviesList movies={movies} />}
+      {movies && <MoviesList movies={movies} />}
     </Container>
   );
 }

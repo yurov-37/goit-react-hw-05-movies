@@ -46,7 +46,6 @@ export default function MovieDetails() {
     }
     getDetailsData();
   }, [movieId]);
-  // console.log(movieData);
   return (
     <Container>
       {isLoading && <ThreeDots color="#3f51b5" />}
