@@ -29,12 +29,12 @@ export default function Reviews() {
     }
     getReviewsData();
   }, [movieId]);
-  // console.log(reviews);
+
   return (
     <Container>
       {isLoading && <ThreeDots color="#3f51b5" />}
       {error && <h2>Data processing error. Try reloading the page.</h2>}
-      {reviews.lenght > 0 ? (
+      {reviews.length > 0 ? (
         <ReviewsList arrayOfReviews={reviews} />
       ) : (
         <p>There is no reviews on this movie</p>

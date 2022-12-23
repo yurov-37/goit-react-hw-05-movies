@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'api/getMovieDetails';
-import { useState } from 'react';
 import SingleMovieCard from 'components/SingleMovieCard/SingleMovieCard';
 import { Container } from 'components/Container/Container.styled';
 import { ThreeDots } from 'react-loader-spinner';
