@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ReviewAuthor, ReviewBox } from './ReviewItem.styled';
 
 export default function ReviewItem({ author, content }) {
@@ -8,3 +9,8 @@ export default function ReviewItem({ author, content }) {
     </ReviewBox>
   );
 }
+
+ReviewItem.propTypes = {
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};

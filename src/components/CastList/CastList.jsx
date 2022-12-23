@@ -1,5 +1,6 @@
 import CastListItem from 'components/CastListItem/CastListItem';
 import { CastGallery } from './CastList.styled';
+import PropTypes from 'prop-types';
 
 export default function CastList({ arrayOfCast }) {
   return (
@@ -17,3 +18,11 @@ export default function CastList({ arrayOfCast }) {
     </CastGallery>
   );
 }
+
+CastList.propTypes = {
+  arrayOfCast: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

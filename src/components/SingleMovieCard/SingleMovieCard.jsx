@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container } from 'components/Container/Container.styled';
 import LolPicture from '../../data/images/lol.png';
 import ReturnButton from 'components/ReturnButton/ReturnButton';
@@ -63,3 +64,17 @@ export default function SingleMovieCard({ movieInfo }) {
     </Container>
   );
 }
+
+SingleMovieCard.propTypes = {
+  movieInfo: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      genres: PropTypes.arrayOf(PropTypes.shape),
+      budget: PropTypes.number,
+      homepage: PropTypes.string,
+      poster: PropTypes.string,
+      description: PropTypes.string,
+      rating: PropTypes.number,
+    })
+  ).isRequired,
+};

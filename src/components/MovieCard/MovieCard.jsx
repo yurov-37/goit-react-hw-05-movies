@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import LolPicture from '../../data/images/lol.png';
 import {
   MovieCardLink,
@@ -37,3 +37,12 @@ export default function MovieCard({
     </MovieCardItem>
   );
 }
+
+MovieCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  poster: PropTypes.string,
+  voteAverage: PropTypes.number,
+  state: PropTypes.string,
+};

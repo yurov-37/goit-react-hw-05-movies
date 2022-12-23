@@ -1,4 +1,5 @@
 import LolPicture from '../../data/images/lol.png';
+import PropTypes from 'prop-types';
 import {
   ActorCard,
   ActorInfo,
@@ -22,3 +23,9 @@ export default function CastListItem({ character, name, poster }) {
     </ActorCard>
   );
 }
+
+CastListItem.propTypes = {
+  character: PropTypes.string,
+  name: PropTypes.string,
+  poster: PropTypes.string,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ReviewItem from 'components/ReviewItem/ReviewItem';
 import { ReviewGallery } from './ReviewsList.styled';
 
@@ -12,3 +13,11 @@ export default function ReviewsList({ arrayOfReviews }) {
     </ReviewGallery>
   );
 }
+
+ReviewsList.propTypes = {
+  arrayOfReviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

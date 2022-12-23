@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { SearchForm, SearchInput, SearchIcon } from './SearchBox.styled';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
@@ -35,3 +36,7 @@ export default function SearchBox({ onUrlChange }) {
     </SearchForm>
   );
 }
+
+SearchBox.propTypes = {
+  onUrlChange: PropTypes.func.isRequired,
+};
